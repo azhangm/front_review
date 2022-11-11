@@ -7,17 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    div {
+        height: 300px;
+        width: 300px;
+        background-color: tomato;
+
+    }
+</style>
 
 <body>
-    <button>点我</button>
-    <script>
-        var btn = document.querySelector('button');
+    <!-- 点击事件 鼠标进入事件 鼠标离开事件 鼠标移动事件 -->
+    <div>
 
-        // 绑定事件
-        btn.onclick = function () {
-            alert("我被点了一下");
+    </div>
+
+    <script>
+        var div = document.querySelector('div');
+        div.onmouseenter = () => {
+            console.log("我进来啦")
+        }
+        div.onmouseleave = () => {
+            console.log("我又出来了")
         }
 
+        div.onmousemove = () => {
+            console.log("鼠标移动事件");
+        }
+
+        div.onclick = () => {
+            console.log("鼠标点击事件")
+        }
     </script>
 </body>
 

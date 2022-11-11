@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>图片切换案例</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    .box {
+        margin: auto auto;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <img src="../static/1.jpg" alt="默认图片">
+        <div>
+            <button class="prev">上一张</button>
+            <button class="next">下一张</button>
+        </div>
+    </div>
+
+    <script>
+        // 获取 img 标签对象
+        var imgDom = document.querySelector("img");
+        console.log(imgDom);
+        console.dir(imgDom);
+
+
+        // 设置 图片 数组
+
+        var imgs = ["../static/1.jpg", "../static//)3Q1(1VL0]NDX]24}2(HK{L.png"];
+
+        var prev = document.querySelector(".prev");
+        var i = 0;
+        prev.addEventListener("click", function () {
+            if (i == 0) {
+                alert("不能在往前翻了哦");
+                return;
+            }
+            imgDom.src = imgs[--i];
+        })
+
+        var next = document.querySelector(".next");
+
+        next.addEventListener("click", function () {
+            if (i == 1) {
+                alert("不能在往后翻了哦");
+                return;
+            }
+            imgDom.src = imgs[++i];
+        })
+    </script>
+</body>
+
+</html>
